@@ -1,14 +1,12 @@
 import "./App.css";
 import { AppHeader } from "./AppHeader";
-
-// function AppHeader(props) {
-//   return <header>TDEE 計算ツール</header>;
-// }
+import { InputForm } from "./InputForm";
 
 function App() {
   return (
     <div className="App">
       <AppHeader></AppHeader>
+      <InputForm></InputForm>
     </div>
   );
 }
