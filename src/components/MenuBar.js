@@ -14,6 +14,8 @@ const Menu = styled.span`
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
+  text-align: left;
+  width: 200px;
 `;
 
 export class MenuBar extends React.Component {

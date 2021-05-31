@@ -4,12 +4,14 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
+  width: 200px;
 `;
 
 const Label = styled.label`
   text-align: left;
   font-size: 24px;
   line-height: 36px;
+  margin-bottom: 12px;
 `;
 
 const Input = styled.input`
