@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { MenuBar } from "./MenuBar";
 
 const HeaderTitle = styled.div`
   height: 48px;
@@ -16,7 +15,6 @@ export class AppHeader extends React.Component {
     return (
       <header>
         <HeaderTitle>TDEE 計算ツール</HeaderTitle>
-        <MenuBar></MenuBar>
       </header>
     );
   }
