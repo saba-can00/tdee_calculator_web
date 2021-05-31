@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
 import { NumberInput } from "./NumberInput";
+import { RadioButton } from "./RadioButton";
 
 const Form = styled.div`
   display: flex;
   flex-direction: column;
+  margin: 24px auto;
 `;
 
 const InputRow = styled.div`
@@ -19,7 +21,12 @@ export class InputForm extends React.Component {
       <Form>
         <InputRow>
           <NumberInput label="年齢" />
-          <NumberInput label="年齢" />
+          <RadioButton
+            label="性別"
+            name="sex"
+            selection="男性"
+            selection2="女性"
+          />
         </InputRow>
       </Form>
     );
