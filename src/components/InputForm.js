@@ -3,8 +3,9 @@ import styled from "styled-components";
 import { NumberInput } from "./NumberInput";
 import { RadioButton } from "./RadioButton";
 import { DropDownInput } from "./DropDownInput";
+import { CalculateButton } from "./CalculateButton";
 
-const Form = styled.div`
+const Form = styled.main`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 76%;
@@ -14,6 +15,16 @@ const Form = styled.div`
 const GridCell = styled.div`
   display: block;
   margin: 0 20% 24px;
+`;
+
+const StyledButton = styled(CalculateButton).attrs((props) => ({
+  label: props.label,
+}))`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin: 64px 10% 24px;
 `;
 
 export class InputForm extends React.Component {
@@ -40,6 +51,7 @@ export class InputForm extends React.Component {
         <GridCell>
           <DropDownInput label="運動レベル" name="activityLevel" />
         </GridCell>
+        <StyledButton label="計算する" />
       </Form>
     );
   }
