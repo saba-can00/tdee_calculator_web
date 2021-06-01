@@ -5,16 +5,16 @@ const Bar = styled.div`
   height: 48px;
   line-height: 48px;
   background: #6ed085;
-  display: flex;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 `;
 
-const Menu = styled.span`
+const Menu = styled.div`
+  margin: 0 auto;
   color: #ffffff;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
-  text-align: left;
   width: 200px;
 `;
 
