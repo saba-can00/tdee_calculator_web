@@ -55,7 +55,7 @@ const ButtonInput = styled.input`
   margin: 0;
   background: #6ed085;
   opacity: 0;
-  transition: opacity 0.1s ease;
+  transition: opacity 0.2s ease;
   &:checked {
     opacity: 1;
   }
