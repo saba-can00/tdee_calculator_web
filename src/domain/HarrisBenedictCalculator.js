@@ -14,7 +14,7 @@ function calcBmr(age, weight, height, sex) {
 
 // this is use the following formula https://gottasport.com/weight-loss/71/harris-benedict-formula-for-women-and-men.html
 // calculate Intake Calorie returns the recommended daily kilocalories to maintain current weight
-function calcIntakeCalorie(age, weight, height, sex, activityLevel) {
+export function calcIntakeCalorie(age, weight, height, sex, activityLevel) {
   let bmr = calcBmr(age, weight, height, sex);
   return Math.floor(bmr * activityLevel);
 }
