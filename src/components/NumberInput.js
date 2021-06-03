@@ -26,12 +26,11 @@ const Input = styled.input`
 export class NumberInput extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { value: props.initialValue };
     this.handleChange = this.handleChange.bind(this);
   }
 
   handleChange(event) {
-    this.setState({ value: event.target.value });
+    this.props.onChange(event.target.value);
   }
 
   render() {
@@ -40,7 +39,7 @@ export class NumberInput extends React.Component {
         <Label>{this.props.label}</Label>
         <Input
           type="number"
-          value={this.state.value}
+          value={this.props.value}
           onChange={this.handleChange}
         ></Input>
       </Container>

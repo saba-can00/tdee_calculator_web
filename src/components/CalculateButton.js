@@ -22,7 +22,11 @@ const Button = styled.button`
 export class CalculateButton extends React.Component {
   render() {
     return (
-      <Button className={this.props.className} type="button">
+      <Button
+        className={this.props.className}
+        onClick={this.props.onClick}
+        type="button"
+      >
         {this.props.label}
       </Button>
     );
