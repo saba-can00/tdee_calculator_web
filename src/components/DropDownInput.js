@@ -22,15 +22,30 @@ const Select = styled.select`
 `;
 
 export class DropDownInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.props.onChange(event.target.value);
+  }
+
   render() {
-    const selections = this.props.selections;
+    const selections = this.props.selections.map((selection) => {
+      return <option value={selection.value}>{selection.label}</option>;
+    });
+
     return (
       <Container>
         <Label>{this.props.label}</Label>
-        <Select name={this.props.name} id={this.props.id}>
-          {selections.map((selection) => {
-            <option value={selection.value}>{selection.label}</option>;
-          })}
+        <Select
+          name={this.props.name}
+          id={this.props.id}
+          value={this.props.value}
+          onChange={this.handleChange}
+        >
+          {selections}
         </Select>
       </Container>
     );

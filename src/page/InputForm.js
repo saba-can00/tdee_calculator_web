@@ -5,6 +5,7 @@ import { RadioButton } from "../components/RadioButton";
 import { DropDownInput } from "../components/DropDownInput";
 import { CalculateButton } from "../components/CalculateButton";
 import { calcIntakeCalorie } from "../domain/services/HarrisBenedictCalculator";
+import { ACTIVITY_LEVEL } from "../domain/entity/ActivityLevelConstants";
 
 const Form = styled.main`
   display: grid;
@@ -36,7 +37,7 @@ export class InputForm extends React.Component {
       weight: 0,
       height: 0,
       sex: "men",
-      activityLevel: 1,
+      activityLevel: ACTIVITY_LEVEL[0],
     };
     this.inputAge = this.inputAge.bind(this);
     this.inputWeight = this.inputWeight.bind(this);
@@ -68,7 +69,7 @@ export class InputForm extends React.Component {
       this.state.weight,
       this.state.height,
       this.state.sex,
-      this.state.activityLevel
+      this.state.activityLevel.value
     );
     console.log(`calorie=${calorie}`);
     return calorie;
@@ -111,7 +112,9 @@ export class InputForm extends React.Component {
           <DropDownInput
             label="運動レベル"
             name="activityLevel"
+            value={this.state.activityLevel}
             onChange={this.inputActivityLevel}
+            selections={ACTIVITY_LEVEL}
           />
         </GridCell>
         <StyledButton label="計算する" onClick={this.calcCalorie} />
