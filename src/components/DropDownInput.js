@@ -23,12 +23,14 @@ const Select = styled.select`
 
 export class DropDownInput extends React.Component {
   render() {
+    const selections = this.props.selections;
     return (
       <Container>
         <Label>{this.props.label}</Label>
         <Select name={this.props.name} id={this.props.id}>
-          <option value="little">ほぼ運動しない</option>
-          <option value="moderate">軽い運動</option>
+          {selections.map((selection) => {
+            <option value={selection.value}>{selection.label}</option>;
+          })}
         </Select>
       </Container>
     );
