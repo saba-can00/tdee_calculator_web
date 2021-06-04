@@ -1,10 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import { NumberInput } from "./NumberInput";
-import { RadioButton } from "./RadioButton";
-import { DropDownInput } from "./DropDownInput";
-import { CalculateButton } from "./CalculateButton";
-import { calcIntakeCalorie } from "../domain/HarrisBenedictCalculator";
+import { NumberInput } from "../components/NumberInput";
+import { RadioButton } from "../components/RadioButton";
+import { DropDownInput } from "../components/DropDownInput";
+import { CalculateButton } from "../components/CalculateButton";
+import { calcIntakeCalorie } from "../domain/services/HarrisBenedictCalculator";
+import {
+  ACTIVITY_LEVEL,
+  LEVEL_LITTLE,
+} from "../domain/entity/ActivityLevelConstants";
+import { SEX, MEN } from "../domain/entity/SexConstants";
 
 const Form = styled.main`
   display: grid;
@@ -35,8 +40,8 @@ export class InputForm extends React.Component {
       age: 0,
       weight: 0,
       height: 0,
-      sex: "men",
-      activityLevel: 1,
+      sex: MEN,
+      activityLevel: LEVEL_LITTLE.value,
     };
     this.inputAge = this.inputAge.bind(this);
     this.inputWeight = this.inputWeight.bind(this);
@@ -56,8 +61,8 @@ export class InputForm extends React.Component {
   inputHeight(height) {
     this.setState({ height: height });
   }
-  inputSex(sex) {
-    this.setState({ sex: sex });
+  inputSex(index) {
+    this.setState({ sex: SEX[index] });
   }
   inputActivityLevel(activityLevel) {
     this.setState({ activityLevel: activityLevel });
@@ -67,7 +72,7 @@ export class InputForm extends React.Component {
       this.state.age,
       this.state.weight,
       this.state.height,
-      this.state.sex,
+      this.state.sex.value,
       this.state.activityLevel
     );
     console.log(`calorie=${calorie}`);
@@ -88,8 +93,8 @@ export class InputForm extends React.Component {
           <RadioButton
             label="性別"
             name="sex"
-            selection="男性"
-            selection2="女性"
+            selectedOption={this.state.sex}
+            selections={SEX}
             onChange={this.inputSex}
           />
         </GridCell>
@@ -111,7 +116,9 @@ export class InputForm extends React.Component {
           <DropDownInput
             label="運動レベル"
             name="activityLevel"
+            value={this.state.activityLevel}
             onChange={this.inputActivityLevel}
+            selections={ACTIVITY_LEVEL}
           />
         </GridCell>
         <StyledButton label="計算する" onClick={this.calcCalorie} />

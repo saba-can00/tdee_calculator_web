@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 240px;
 `;
 
 const Label = styled.label`
@@ -22,13 +21,34 @@ const Select = styled.select`
 `;
 
 export class DropDownInput extends React.Component {
+  constructor(props) {
+    super(props);
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(event) {
+    this.props.onChange(event.target.value);
+  }
+
   render() {
+    const selections = this.props.selections.map((selection) => {
+      return (
+        <option key={selection.value} value={selection.value}>
+          {selection.label}
+        </option>
+      );
+    });
+
     return (
       <Container>
         <Label>{this.props.label}</Label>
-        <Select name={this.props.name} id={this.props.id}>
-          <option value="little">ほぼ運動しない</option>
-          <option value="moderate">軽い運動</option>
+        <Select
+          name={this.props.name}
+          id={this.props.id}
+          value={this.props.value}
+          onChange={this.handleChange}
+        >
+          {selections}
         </Select>
       </Container>
     );
