@@ -1,23 +1,23 @@
 const LEVEL_LITTLE = {
-  label: "ほぼ運動しない。デスクワーク中心。",
+  label: "ほぼ運動しない。座っていることが多い",
   value: 1.2,
 };
 const LEVEL_LIGHT = {
-  label: "週に1,2回は運動をする。",
+  label: "週に1、2回の運動をしている。",
   value: 1.375,
 };
 const LEVEL_MODERATE = {
-  label: "週に3,4回は運動をする",
+  label: "週に3、4回の運動をしている",
   value: 1.55,
 };
 
 const LEVEL_HARD = {
-  label: "毎日、30分-1時間の運動をする",
+  label: "ほぼ毎日、運動をしている",
   value: 1.725,
 };
 
 const LEVEL_ATHLETE = {
-  label: "毎日、30-1時間の運動を2回以上している",
+  label: "毎日、2回以上の運動をしている",
   value: 1.9,
 };
 
@@ -36,4 +36,4 @@ const ACTIVITY_LEVEL = [
 ];
 Object.freeze(ACTIVITY_LEVEL);
 
-export { ACTIVITY_LEVEL };
+export { ACTIVITY_LEVEL, LEVEL_LITTLE };
