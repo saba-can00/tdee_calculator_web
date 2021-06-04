@@ -31,6 +31,7 @@ const SelectionLabel = styled.label`
   text-align: left;
   font-size: 24px;
   line-height: 36px;
+  cursor: pointer;
   &:before {
     content: "";
     border-radius: 50%;
@@ -56,41 +57,44 @@ const ButtonInput = styled.input`
   background: #6ed085;
   opacity: 0;
   transition: opacity 0.2s ease;
+  cursor: pointer;
   &:checked {
     opacity: 1;
   }
 `;
 
 export class RadioButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.onChange = this.onChange.bind(this);
+  }
+  onChange(event) {
+    //return index by event.target.value
+    this.props.onChange(event.target.value);
+  }
+
   render() {
+    const selections = this.props.selections.map((selection, index) => {
+      return (
+        <Selection key={selection.id}>
+          <ButtonInput
+            type="radio"
+            id={selection.id}
+            name={this.props.name}
+            value={index}
+            checked={this.props.selectedOption.value === selection.value}
+            onChange={this.onChange}
+          />
+          <SelectionLabel htmlFor={selection.value}>
+            {selection.label}
+          </SelectionLabel>
+        </Selection>
+      );
+    });
     return (
       <RadioButtonContainer>
         <RadioButtonGroupLabel>{this.props.label}</RadioButtonGroupLabel>
-        <SelectionContainer>
-          <Selection>
-            <ButtonInput
-              checked
-              type="radio"
-              id="men"
-              name={this.props.name}
-              value="men"
-            />
-            <SelectionLabel htmlFor="men">
-              {this.props.selection}
-            </SelectionLabel>
-          </Selection>
-          <Selection>
-            <ButtonInput
-              type="radio"
-              id="women"
-              name={this.props.name}
-              value="women"
-            />
-            <SelectionLabel htmlFor="women">
-              {this.props.selection2}
-            </SelectionLabel>
-          </Selection>
-        </SelectionContainer>
+        <SelectionContainer>{selections}</SelectionContainer>
       </RadioButtonContainer>
     );
   }
