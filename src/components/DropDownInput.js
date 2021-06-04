@@ -4,7 +4,6 @@ import styled from "styled-components";
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  width: 240px;
 `;
 
 const Label = styled.label`
@@ -33,7 +32,11 @@ export class DropDownInput extends React.Component {
 
   render() {
     const selections = this.props.selections.map((selection) => {
-      return <option value={selection.value}>{selection.label}</option>;
+      return (
+        <option key={selection.value} value={selection.value}>
+          {selection.label}
+        </option>
+      );
     });
 
     return (
