@@ -4,7 +4,7 @@ import { NumberInput } from "./NumberInput";
 import { RadioButton } from "./RadioButton";
 import { DropDownInput } from "./DropDownInput";
 import { CalculateButton } from "./CalculateButton";
-import { calcIntakeCalorie } from "../domain/HarrisBenedictCalculator";
+import { calcIntakeCalorie } from "../domain/services/HarrisBenedictCalculator";
 
 const Form = styled.main`
   display: grid;
