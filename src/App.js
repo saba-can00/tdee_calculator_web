@@ -13,7 +13,7 @@ function App() {
       <AppHeader></AppHeader>
       <MenuBar></MenuBar>
       <Switch>
-        <Route path="/faq"></Route>
+        <Route path="/faq">FAQ</Route>
         <Route path="/result">
           <CalculatedResultPage location={location} />
         </Route>
