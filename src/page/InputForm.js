@@ -10,29 +10,6 @@ import {
   LEVEL_LITTLE,
 } from "../domain/entity/ActivityLevelConstants";
 import { SEX, MEN } from "../domain/entity/SexConstants";
-import { useHistory } from "react-router-dom";
-
-const Form = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 76%;
-  margin: 24px auto;
-`;
-
-const GridCell = styled.div`
-  display: block;
-  margin: 0 20% 24px;
-`;
-
-const StyledButton = styled(CalculateButton).attrs((props) => ({
-  label: props.label,
-}))`
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 4;
-  grid-row-end: 5;
-  margin: 64px 10% 24px;
-`;
 
 export class InputForm extends React.Component {
   constructor(props) {
@@ -51,7 +28,6 @@ export class InputForm extends React.Component {
     this.inputActivityLevel = this.inputActivityLevel.bind(this);
     this.inputAge = this.inputAge.bind(this);
     this.calcCalorie = this.calcCalorie.bind(this);
-    this.history = useHistory();
   }
 
   inputAge(age) {
@@ -78,7 +54,12 @@ export class InputForm extends React.Component {
       this.state.activityLevel
     );
     console.log(`calorie=${calorie}`);
-    this.history.push("/result", { calorie: calorie });
+    this.props.history.push({
+      pathname: "/result",
+      state: {
+        calorie: calorie,
+      },
+    });
   }
 
   render() {
@@ -128,3 +109,25 @@ export class InputForm extends React.Component {
     );
   }
 }
+
+const Form = styled.main`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 76%;
+  margin: 24px auto;
+`;
+
+const GridCell = styled.div`
+  display: block;
+  margin: 0 20% 24px;
+`;
+
+const StyledButton = styled(CalculateButton).attrs((props) => ({
+  label: props.label,
+}))`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin: 64px 10% 24px;
+`;
