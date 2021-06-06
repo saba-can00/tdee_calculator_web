@@ -10,6 +10,7 @@ import {
   LEVEL_LITTLE,
 } from "../domain/entity/ActivityLevelConstants";
 import { SEX, MEN } from "../domain/entity/SexConstants";
+import { useHistory } from "react-router-dom";
 
 const Form = styled.main`
   display: grid;
@@ -50,6 +51,7 @@ export class InputForm extends React.Component {
     this.inputActivityLevel = this.inputActivityLevel.bind(this);
     this.inputAge = this.inputAge.bind(this);
     this.calcCalorie = this.calcCalorie.bind(this);
+    this.history = useHistory();
   }
 
   inputAge(age) {
@@ -76,7 +78,7 @@ export class InputForm extends React.Component {
       this.state.activityLevel
     );
     console.log(`calorie=${calorie}`);
-    return calorie;
+    this.history.push("/result", { calorie: calorie });
   }
 
   render() {
