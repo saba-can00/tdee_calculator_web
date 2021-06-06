@@ -1,3 +1,4 @@
+import { Route, Switch } from "react-router";
 import "./App.css";
 import { AppHeader } from "./components/AppHeader";
 import { MenuBar } from "./components/MenuBar";
@@ -8,7 +9,12 @@ function App() {
     <div className="App">
       <AppHeader></AppHeader>
       <MenuBar></MenuBar>
-      <InputForm></InputForm>
+      <Switch>
+        <Route path="/faq"></Route>
+        <Route path="/">
+          <InputForm />
+        </Route>
+      </Switch>
     </div>
   );
 }
