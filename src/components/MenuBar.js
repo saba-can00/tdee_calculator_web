@@ -9,21 +9,23 @@ const Bar = styled.div`
   grid-template-columns: 1fr 1fr;
 `;
 
-const Menu = styled.div`
+const Menu = styled.a`
   margin: 0 auto;
   color: #ffffff;
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
   width: 200px;
+  cursor: pointer;
+  text-decoration: none;
 `;
 
 export class MenuBar extends React.Component {
   render() {
     return (
       <Bar>
-        <Menu>TDEEを計算する</Menu>
-        <Menu>TDEEって何?</Menu>
+        <Menu href="/">TDEEを計算する</Menu>
+        <Menu href="/faq">TDEEって何?</Menu>
       </Bar>
     );
   }

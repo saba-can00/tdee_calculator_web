@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 export class CalculatedResultPage extends React.Component {
   render() {
-    <Form></Form>;
+    return <Form>{this.props.location.state.calorie}</Form>;
   }
 }
 

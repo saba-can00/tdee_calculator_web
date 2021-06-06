@@ -11,28 +11,6 @@ import {
 } from "../domain/entity/ActivityLevelConstants";
 import { SEX, MEN } from "../domain/entity/SexConstants";
 
-const Form = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 76%;
-  margin: 24px auto;
-`;
-
-const GridCell = styled.div`
-  display: block;
-  margin: 0 20% 24px;
-`;
-
-const StyledButton = styled(CalculateButton).attrs((props) => ({
-  label: props.label,
-}))`
-  grid-column-start: 1;
-  grid-column-end: 3;
-  grid-row-start: 4;
-  grid-row-end: 5;
-  margin: 64px 10% 24px;
-`;
-
 export class InputForm extends React.Component {
   constructor(props) {
     super(props);
@@ -76,7 +54,12 @@ export class InputForm extends React.Component {
       this.state.activityLevel
     );
     console.log(`calorie=${calorie}`);
-    return calorie;
+    this.props.history.push({
+      pathname: "/result",
+      state: {
+        calorie: calorie,
+      },
+    });
   }
 
   render() {
@@ -126,3 +109,25 @@ export class InputForm extends React.Component {
     );
   }
 }
+
+const Form = styled.main`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 76%;
+  margin: 24px auto;
+`;
+
+const GridCell = styled.div`
+  display: block;
+  margin: 0 20% 24px;
+`;
+
+const StyledButton = styled(CalculateButton).attrs((props) => ({
+  label: props.label,
+}))`
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+  margin: 64px 10% 24px;
+`;
