@@ -1,7 +1,7 @@
 import "./App.css";
-import { AppHeader } from "./AppHeader";
-import { MenuBar } from "./MenuBar";
-import { InputForm } from "../page/InputForm";
+import { AppHeader } from "./components/AppHeader";
+import { MenuBar } from "./components/MenuBar";
+import { InputForm } from "./page/InputForm";
 
 function App() {
   return (
