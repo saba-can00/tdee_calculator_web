@@ -19,7 +19,7 @@ const Button = styled.button`
   }
 `;
 
-export class CalculateButton extends React.Component {
+export class MainActionButton extends React.Component {
   render() {
     return (
       <Button
