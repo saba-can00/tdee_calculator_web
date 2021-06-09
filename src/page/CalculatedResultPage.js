@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import { MainActionButton } from "../components/MainActionButton";
+import { Link } from "react-router-dom";
 
 export class CalculatedResultPage extends React.Component {
   render() {
@@ -12,9 +14,12 @@ export class CalculatedResultPage extends React.Component {
         </ExplanationOfCalorie>
         <SubText>
           減量 / 増量 をする場合は
-          <RangeOfCalorie>± 200 ~ 300 kcal</RangeOfCalorie>{" "}
+          <RangeOfCalorie>± 200 ~ 300 kcal</RangeOfCalorie>
           を目安に摂取しましょう
         </SubText>
+        <LinkToHome to="/">
+          <BackButton label="戻る" />
+        </LinkToHome>
       </Form>
     );
   }
@@ -47,4 +52,16 @@ const SubText = styled.p`
 
 const RangeOfCalorie = styled.span`
   color: #d06eb9;
+`;
+
+const BackButton = styled(MainActionButton).attrs((props) => ({
+  label: props.label,
+}))`
+  width: 100%;
+`;
+
+const LinkToHome = styled(Link).attrs((props) => ({
+  to: props.to,
+}))`
+  margin-top: 6%;
 `;

@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { NumberInput } from "../components/NumberInput";
 import { RadioButton } from "../components/RadioButton";
 import { DropDownInput } from "../components/DropDownInput";
-import { CalculateButton } from "../components/CalculateButton";
+import { MainActionButton } from "../components/MainActionButton";
 import { calcIntakeCalorie } from "../domain/services/HarrisBenedictCalculator";
 import {
   ACTIVITY_LEVEL,
@@ -122,12 +122,12 @@ const GridCell = styled.div`
   margin: 0 20% 24px;
 `;
 
-const StyledButton = styled(CalculateButton).attrs((props) => ({
+const StyledButton = styled(MainActionButton).attrs((props) => ({
   label: props.label,
 }))`
   grid-column-start: 1;
   grid-column-end: 3;
   grid-row-start: 4;
   grid-row-end: 5;
-  margin: 64px 10% 24px;
+  margin: 6% 10% 24px;
 `;
