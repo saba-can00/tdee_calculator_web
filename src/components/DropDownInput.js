@@ -18,6 +18,7 @@ const Select = styled.select`
   height: 36px;
   padding-left: 4px;
   border: 1px solid rgba(73, 72, 72, 0.8);
+  width: max-content;
 `;
 
 export class DropDownInput extends React.Component {
