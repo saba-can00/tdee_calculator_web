@@ -65,14 +65,14 @@ export class InputForm extends React.Component {
   render() {
     return (
       <Form>
-        <GridCell>
+        <LeftCell>
           <NumberInput
             label="年齢"
             value={this.state.age}
             onChange={this.inputAge}
           />
-        </GridCell>
-        <GridCell>
+        </LeftCell>
+        <RightCell>
           <RadioButton
             label="性別"
             name="sex"
@@ -80,22 +80,22 @@ export class InputForm extends React.Component {
             selections={SEX}
             onChange={this.inputSex}
           />
-        </GridCell>
-        <GridCell>
+        </RightCell>
+        <LeftCell>
           <NumberInput
             label="体重"
             value={this.state.weight}
             onChange={this.inputWeight}
           />
-        </GridCell>
-        <GridCell>
+        </LeftCell>
+        <RightCell>
           <NumberInput
             label="身長"
             value={this.state.height}
             onChange={this.inputHeight}
           />
-        </GridCell>
-        <GridCell>
+        </RightCell>
+        <LeftCell>
           <DropDownInput
             label="運動レベル"
             name="activityLevel"
@@ -103,7 +103,7 @@ export class InputForm extends React.Component {
             onChange={this.inputActivityLevel}
             selections={ACTIVITY_LEVEL}
           />
-        </GridCell>
+        </LeftCell>
         <StyledButton label="計算する" onClick={this.calcCalorie} />
       </Form>
     );
@@ -111,23 +111,42 @@ export class InputForm extends React.Component {
 }
 
 const Form = styled.main`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  width: 76%;
-  margin: 24px auto;
+  @media (min-width: 1024px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    margin: 24px auto;
+  }
+  @media (max-width: 1023px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  @media (min-width: 426px) and (max-width: 1023px) {
+    margin: 24px 25%;
+  }
+  @media (max-width: 425px) {
+    margin: 24px 5%;
+  }
 `;
 
-const GridCell = styled.div`
-  display: block;
-  margin: 0 20% 24px;
+const LeftCell = styled.div`
+  grid-column-start: 2;
+  grid-column-end: 3;
+  margin-bottom: 24px;
+`;
+
+const RightCell = styled.div`
+  grid-column-start: 3;
+  grid-column-end: 4;
+  margin-bottom: 24px;
 `;
 
 const StyledButton = styled(MainActionButton).attrs((props) => ({
   label: props.label,
 }))`
-  grid-column-start: 1;
-  grid-column-end: 3;
+  grid-column-start: 2;
+  grid-column-end: 4;
   grid-row-start: 4;
   grid-row-end: 5;
-  margin: 6% 10% 24px;
+  margin-top: 6%;
 `;

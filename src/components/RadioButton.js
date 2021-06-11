@@ -8,9 +8,15 @@ const RadioButtonContainer = styled.div`
 
 const SelectionContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
+  @media (min-width: 768px) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+  }
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 `;
 
 const Selection = styled.div`

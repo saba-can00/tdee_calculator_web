@@ -5,8 +5,7 @@ const Bar = styled.div`
   height: 48px;
   line-height: 48px;
   background: #6ed085;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
 `;
 
 const Menu = styled.a`
@@ -14,9 +13,17 @@ const Menu = styled.a`
   color: #ffffff;
   font-style: normal;
   font-weight: 600;
-  font-size: 24px;
   cursor: pointer;
   text-decoration: none;
+  @media (min-width: 769px) {
+    font-size: 24px;
+  }
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+  @media (max-width: 425px) {
+    font-size: 16px;
+  }
 `;
 
 export class MenuBar extends React.Component {
