@@ -1,9 +1,9 @@
 const LEVEL_LITTLE = {
-  label: "ほぼ運動しない。座っていることが多い",
+  label: "ほとんど運動しない",
   value: 1.2,
 };
 const LEVEL_LIGHT = {
-  label: "週に1、2回の運動をしている。",
+  label: "週に1、2回の運動をしている",
   value: 1.375,
 };
 const LEVEL_MODERATE = {
