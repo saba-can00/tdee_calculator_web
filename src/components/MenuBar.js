@@ -15,7 +15,6 @@ const Menu = styled.a`
   font-style: normal;
   font-weight: 600;
   font-size: 24px;
-  width: 200px;
   cursor: pointer;
   text-decoration: none;
 `;
