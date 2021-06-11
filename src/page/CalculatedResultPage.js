@@ -9,6 +9,7 @@ export class CalculatedResultPage extends React.Component {
       <Form>
         <ExplanationOfCalorie>
           体重を維持するための摂取カロリーは、
+          <br />
           <Calorie>{this.props.location.state.calorie} kcal</Calorie>
           です
         </ExplanationOfCalorie>
@@ -34,20 +35,38 @@ const Form = styled.main`
 const ExplanationOfCalorie = styled.p`
   color: #000;
   font-weight: 300;
-  font-size: 32px;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+
+  @media (min-width: 768px) {
+    font-size: 32px;
+  }
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 `;
 
 const Calorie = styled.span`
   color: #d06eb9;
-  font-size: 52px;
+  @media (min-width: 768px) {
+    font-size: 48px;
+  }
+  @media (max-width: 767px) {
+    font-size: 32px;
+  }
 `;
 
 const SubText = styled.p`
   color: #000;
   font-weight: 300;
-  font-size: 24px;
-  margin: 0;
+  margin-top: 0;
+  margin-bottom: 16px;
+  @media (min-width: 768px) {
+    font-size: 24px;
+  }
+  @media (max-width: 767px) {
+    font-size: 20px;
+  }
 `;
 
 const RangeOfCalorie = styled.span`
