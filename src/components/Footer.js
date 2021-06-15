@@ -7,7 +7,7 @@ export class Footer extends React.Component {
     return (
       <FooterContainer>
         <FooterMenuGroup>
-          <Link>利用規約</Link>
+          <Link to="/terms">利用規約</Link>
         </FooterMenuGroup>
         <TradeMark>
           &copy; 2021 <a href="https://github.com/saba-can00">saba-can00</a>

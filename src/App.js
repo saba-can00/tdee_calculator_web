@@ -4,6 +4,7 @@ import { MenuBar } from "./components/MenuBar";
 import { CalculatedResultPage } from "./page/CalculatedResultPage";
 import { InputForm } from "./page/InputForm";
 import { FaqPage } from "./page/FaqPage";
+import { TermsOfService } from "./page/TermsOfService";
 import { Footer } from "./components/Footer";
 import styled from "styled-components";
 
@@ -15,6 +16,9 @@ function App() {
       <AppHeader></AppHeader>
       <MenuBar></MenuBar>
       <Switch>
+        <Route path="/terms">
+          <TermsOfService />
+        </Route>
         <Route path="/faq">
           <FaqPage />
         </Route>
