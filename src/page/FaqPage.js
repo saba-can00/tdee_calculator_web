@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { ArticleTitle } from "../components/ArticleTitle";
+import { PageTitle } from "../components/PageTitle";
 import { ArticleParagraph } from "../components/ArticleParagraph";
 export class FaqPage extends React.Component {
   render() {
@@ -33,7 +33,7 @@ const Form = styled.main`
   flex-direction: column;
 `;
 
-const Header = styled(ArticleTitle).attrs((props) => ({
+const Header = styled(PageTitle).attrs((props) => ({
   title: props.title,
 }))`
   margin-top: 0;

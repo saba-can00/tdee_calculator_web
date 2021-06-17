@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const HeaderTitle = styled.div`
   height: 48px;
-  font-weight: 300;
+  font-weight: 100;
   font-size: 36px;
   text-align: center;
   color: #000000;
