@@ -20,7 +20,7 @@ const Input = styled.input`
   height: 36px;
   font-family: "M PLUS 1p", sans-serif;
   font-size: 20px;
-  font-weight: 600;
+  font-weight: 300;
 `;
 
 export class NumberInput extends React.Component {

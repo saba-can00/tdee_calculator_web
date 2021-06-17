@@ -23,6 +23,7 @@ const FooterContainer = styled.footer`
   width: 100%;
   height: 80px;
   font-size: 14px;
+  font-weight: 300;
   margin-top: auto;
   & a {
     color: #fff;

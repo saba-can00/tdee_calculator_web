@@ -9,6 +9,6 @@ export class PageTitle extends React.Component {
 
 const Title = styled.h1`
   font-size: 32px;
-  font-family: "'M plus 1p'", sans-serif;
-  font-weight: 400;
+  font-family: "M PLUS 1p", sans-serif;
+  font-weight: 300;
 `;

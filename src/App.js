@@ -37,6 +37,7 @@ function App() {
 const AppContainer = styled.div`
   margin: 0 auto;
   font-family: "M PLUS 1p", sans-serif;
+  font-weight: 100;
   display: flex;
   flex-direction: column;
   min-height: 100vh;
