@@ -12,7 +12,7 @@ const Menu = styled.a`
   margin: 0 auto;
   color: #ffffff;
   font-style: normal;
-  font-weight: 600;
+  font-weight: 400;
   cursor: pointer;
   text-decoration: none;
   @media (min-width: 769px) {
